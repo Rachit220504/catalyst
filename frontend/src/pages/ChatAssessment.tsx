@@ -3,8 +3,7 @@ import { useLocation, useNavigate, Navigate } from 'react-router-dom';
 import { Send, Bot, User, Loader2 } from 'lucide-react';
 
 // Changed to strictly match LandingPage.tsx
-const API_URL = 'http://localhost:3005';
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3005';
 type Message = { role: 'ai' | 'user'; content: string };
 
 export default function ChatAssessment() {

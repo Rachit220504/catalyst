@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { UploadCloud, FileText, ArrowRight, Loader2, CheckCircle2, Sparkles } from 'lucide-react';
 
 // Make sure there is NO '/api' here so it matches the backend routes perfectly
-const API_URL = 'http://localhost:3005';
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3005';
 export default function LandingPage() {
   const [jobDescription, setJobDescription] = useState('');
   const [file, setFile] = useState<File | null>(null);
