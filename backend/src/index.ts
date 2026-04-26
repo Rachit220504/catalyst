@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(cors({
-  origin: ['https://catalyst-frontend-gk6mwa15m-rachit-chandekars-projects.vercel.app/', 'http://localhost:5173'],
+  origin: ['https://catalyst-frontend-sigma.vercel.app/', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
