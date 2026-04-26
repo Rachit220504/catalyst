@@ -133,7 +133,7 @@ app.post('/api/chat', async (req: Request, res: Response): Promise<void> => {
 
     // 3. Initialize Gemini
     const llm = new ChatGoogleGenerativeAI({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash', // <-- Update this string
       // apiKey is automatically picked up from process.env.GOOGLE_API_KEY
     });
 
@@ -211,7 +211,8 @@ app.post('/api/generate-plan', async (req: Request, res: Response): Promise<void
 
     // 2. Initialize Gemini
     const llm = new ChatGoogleGenerativeAI({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash', // <-- Update this string
+      // apiKey is automatically picked up from process.env.GOOGLE_API_KEY
     });
 
     // 3. Construct Prompt
@@ -231,7 +232,7 @@ Job Description: ${session.jobDescription}
 Chat History: ${JSON.stringify(session.chatHistory)}`;
 
     // 4. Invoke Gemini
-    const response = await llm.invoke([new SystemMessage(prompt)]);
+    const response = await llm.invoke([new HumanMessage(prompt)]);
     let responseText = response.content.toString().trim();
 
     // Clean up potential markdown formatting if the model still outputs it
