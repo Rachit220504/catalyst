@@ -11,7 +11,11 @@ const prisma = new PrismaClient();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: '*' }));
+app.use(cors({
+  origin: ['https://your-vercel-app-url.vercel.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 
 const upload = multer({ storage: multer.memoryStorage() });
