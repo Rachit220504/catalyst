@@ -223,7 +223,7 @@ Each object must exactly have these fields:
 - "skillGap" (string): The missing or weak skill identified.
 - "recommendation" (string): Actionable advice to improve.
 - "estimatedHours" (integer): Estimated time to learn.
-- "curatedResource" (string): Generic platform name to learn from (e.g., 'Coursera', 'Udemy', 'YouTube'). No URLs.
+- "curatedResource" (string): A precise, direct, and valid URL (starting with https://) to a specific course, official documentation, or tutorial to learn this skill. Do not hallucinate fake links; use well-known, highly reliable URLs.
 
 Output ONLY valid raw JSON. Do not include markdown code blocks like \`\`\`json.
 

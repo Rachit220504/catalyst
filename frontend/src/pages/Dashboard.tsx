@@ -62,10 +62,17 @@ export default function Dashboard() {
                 <BookOpen size={11} />
                 Recommended Resource
               </span>
-              <span className="resource-name">
-                {item.curatedResource}
-                <ChevronRight />
-              </span>
+              {/* Now using the exact URL provided by the LLM */}
+              <a 
+                href={item.curatedResource} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="resource-name"
+                style={{ textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+              >
+                Go to Resource
+                <ChevronRight size={16} style={{ marginLeft: '4px' }} />
+              </a>
             </div>
           </div>
         ))}
